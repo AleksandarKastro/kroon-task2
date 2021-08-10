@@ -1,0 +1,154 @@
+html {
+	scroll-behavior: smooth;
+}
+
+.loading {
+	height: calc(100vh - 100px);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.showImage .avatar {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+	width: auto !important;
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 2s; /* Firefox < 16 */
+	-ms-animation: fadein 2s; /* Internet Explorer */
+	-o-animation: fadein 2s; /* Opera < 12.1 */
+	animation: fadein 2s;
+}
+
+.st-table-wrap {
+	color: #000;
+	overflow-x: auto;
+	.st-table {
+		font-size: 15px;
+		line-height: 0;
+		font-weight: 400;
+		border-collapse: collapse;
+		width: 100%;
+		.tb-row {
+			border-bottom: 1px solid #c8c7cc;
+			cursor: pointer;
+			&.first {
+				height: 28px;
+				border-bottom: 1px solid transparent;
+				background-color: #f3f3f3;
+			}
+			th {
+				text-align: left;
+				padding: 6px 12px;
+				font-weight: 600;
+			}
+
+			td {
+				text-align: left;
+				padding: 10px 12px;
+				height: 50px;
+			}
+			&.active {
+				span {
+					color: #06a9f6;
+				}
+				img {
+					filter: brightness(50%);
+				}
+			}
+		}
+		img {
+			object-fit: cover;
+			height: 100%;
+			&.avatar {
+				width: 50px;
+			}
+		}
+	}
+} /* st-table-wrap END */
+
+.st-pagination {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-align: center;
+	li {
+		border-radius: 100px;
+		cursor: pointer;
+		display: inline-block;
+		text-align: center;
+		width: 38px;
+		height: 38px;
+		outline: none;
+		a {
+			display: block;
+			width: 38px;
+			padding: 9px 0;
+			outline: none;
+			text-decoration: none;
+			svg {
+				width: 20px !important;
+				height: 16px;
+				vertical-align: -0.125em;
+			}
+		}
+	}
+	&.light {
+		a {
+			color: #06a9f6;
+			&:hover {
+				color: #008ecf;
+			}
+			&:focus {
+				color: #000;
+			}
+		}
+		.rc-pagination-item-active {
+			a {
+				color: #000;
+			}
+		}
+		.previous,
+		.next {
+			a {
+				&:focus {
+					color: #000;
+				}
+			}
+		}
+	} //pagination light END
+
+	li.rc-pagination-options {
+		display: none;
+	}
+} // st-pagination END
+
+@media screen and (min-width: 768px) {
+	.st-radio-group-wrap {
+		flex-direction: row;
+		.container {
+			margin-right: 40px;
+			&:last-of-type {
+				margin-right: 0;
+			}
+		}
+
+		&.radio-group-absolute {
+			position: absolute;
+			top: -60px;
+			right: 0;
+		}
+	} // st-radio-group-wrap END
+	.st-table-wrap {
+		mask-image: none;
+		-webkit-mask-image: none;
+		overflow: hidden;
+	}
+	.st-pagination {
+		text-align: right;
+	}
+}
